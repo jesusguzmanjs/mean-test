@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {MainService} from './services/main';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
-import {ModalComponent} from "./components/modal/modal.component";
+import {UpdateBillModalComponent} from './components/update-bill-modal/update-bill-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,6 @@ import {ModalComponent} from "./components/modal/modal.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('exampleModal') editModal : TemplateRef<any> | undefined;
   title = 'client';
   form: FormGroup;
   public columnDefs = [
@@ -37,10 +36,12 @@ export class AppComponent implements OnInit {
     },
     {
       headerName: 'Coste por hora (€)',
-      field: 'price per hour'
+      field: 'pricePerHour'
     }
   ];
-  public rowData = [];
+  public rowData = [{
+    pricePerHour: 1
+  }];
   private gridApi: any;
   public gridOptions: any;
 
@@ -73,12 +74,13 @@ export class AppComponent implements OnInit {
   }
 
   onRowDoubleClicked(ev: any) {
-    this.modalService.open(ModalComponent, {size: 'lg', centered: true})
+    const modalRef = this.modalService.open(UpdateBillModalComponent, {size: 'lg', centered: true})
+    modalRef.componentInstance.billData = ev.data;
     console.log('en el double', ev)
   }
 
   async loadData() {
-    this.mainService.getData().subscribe(
+    /*this.mainService.getData().subscribe(
         (response) => {
           console.log('el response', response)
           // @ts-ignore
@@ -87,7 +89,7 @@ export class AppComponent implements OnInit {
         (error) => {
           console.log('el error', error)
         }
-    )
+    )*/
   }
 
   upload(event: any) {
