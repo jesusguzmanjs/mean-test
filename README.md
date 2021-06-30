@@ -4,7 +4,7 @@ Aplicación usando MEAN stack para visualizar datos en una tabla, donde se puede
 
 # Docker
 
-La manera mas facil de iniciar esta aplicacion es usando docker, para ello descarga Docker Desktop 
+La manera mas facil de iniciar esta aplicación es usando docker, para ello descarga Docker Desktop 
 desde el siguiente link: https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
 Inicia el servicio de Docker iniciando Docker Desktop una vez instalado
@@ -13,17 +13,17 @@ Desde la ruta principal del proyecto realizar este comando
 
 `docker-compose pull`
 
-Despues
+Después
 
 `docker-compose up -d`
 
 y navegar a la ruta `localhost:80`
 
-#Sin Docker
+# Sin Docker
 
 Si se desea iniciar sin docker, seguir los siguientes pasos:
 
--Asegurarse de tener instalado Node en la ultima version estable
+-Asegurarse de tener instalado Node en la última versión estable
 
 https://nodejs.org/en/
 
