@@ -1,4 +1,4 @@
-#MEAN Stack APP
+# MEAN Stack APP
 
 Aplicación usando MEAN stack para visualizar datos en una tabla, donde se pueden crear, editar o importar desde un archivo CSV
 
