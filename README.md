@@ -2,6 +2,9 @@
 
 Aplicación usando MEAN stack para visualizar datos en una tabla, donde se pueden crear, editar o importar desde un archivo CSV
 
+Se puede editar una fila de la tabla haciendo doble click sobre ellas
+
+
 # Docker
 
 La manera mas facil de iniciar esta aplicación es usando docker, para ello descarga Docker Desktop 
