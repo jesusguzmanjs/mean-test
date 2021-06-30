@@ -8,15 +8,24 @@ router.get("/", (req: any, res) => {
     res.render("index");
 });
 
-// about page
-router.post("/upload-csv", upload.single('file') , (req: any, res) => {
-    BaseService.uploadCSV(req, res);
-    res.send({hola: 'hola'});
+router.post("/upload-csv", upload.single('csv') , (req: any, res, next) => {
+    BaseService.uploadCSV(req, res, next);
 });
 
-router.get("/bills", upload.single('file') , (req: any, res) => {
-    BaseService.getBills(req, res);
-    // res.send({hola: 'hola'});
+router.get("/bills", (req: any, res, next) => {
+    BaseService.getBills(req, res, next);
+});
+
+router.put("/update-bill/:billId", (req: any, res, next) => {
+    BaseService.updateBill(req, res, next);
+});
+
+router.post("/create-bill", (req: any, res, next) => {
+    BaseService.createBill(req, res, next);
+});
+
+router.post("/delete-bill", (req: any, res, next) => {
+    BaseService.deleteBills(req, res, next);
 });
 
 module.exports = router;

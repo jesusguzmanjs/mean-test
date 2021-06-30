@@ -1,3 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
-@import "../node_modules/ag-grid-community/dist/styles/ag-theme-material.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+body, html {
+    height: 99%;
+    margin:2px;
+}
+
+app-root, app-root .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+app-root .container .ag-grid-angular {
+    flex-basis: 100%;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+ag-grid-angular{
+    height: 100%;
+    width: 100%;
+}

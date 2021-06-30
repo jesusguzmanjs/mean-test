@@ -1,41 +1,45 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
+<div class="container m-auto">
+  <div class="row" style='margin-top: 2%;'>
+    <div class="col">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="row">
+          <div class="mb-3 custom-file col">
+            <label for="formFile" class="form-label custom-file-label">{{file?.name || 'Sube un archivo csv'}}</label>
+            <input class="form-control custom-file-input" type="file" id="formFile" (change)="upload($event)" accept=".csv">
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary">Subir</button>
+          </div>
+        </div>
 
-  .main-margin {
-    margin: 82px auto 32px;
-    padding: 0 16px;
-  }
+      </form>
+    </div>
 
 
-</style>
-
-<!-- Toolbar -->
-<div class="main-margin container">
-  <div class="row">
-    <form [formGroup]="form" (ngSubmit)="submit()">
-      <div class="mb-3 custom-file">
-        <label for="formFile" class="form-label custom-file-label">Default file input example</label>
-        <input class="form-control custom-file-input" type="file" id="formFile" (change)="upload($event)">
-      </div>
-      <div>
-        <button type="submit">Upload</button>
-      </div>
-    </form>
   </div>
-  <div class="row">
-    hola
-      <ag-grid-angular class="ag-theme-material grid-size" [rowData]="rowData" [gridOptions]="gridOptions" [columnDefs]="columnDefs" (gridReady)="onGridReady($event)">
+  <div class="row align-items-start">
+    <div class="col">
+      <div>
+        <button type="submit" class="btn btn-primary" (click)="openCreateBillModal()">Crear</button>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <button type="submit" class="btn btn-primary" (click)="deleteBills()" [disabled]="!(gridApi && gridApi.getSelectedRows().length)" >Eliminar seleccionados</button>
+      </div>
+    </div>
+  </div>
+  <div class="row" style='height: 100%; margin-top: 2%'>
+      <ag-grid-angular class="ag-theme-alpine grid-size"
+                       [rowData]="rowData"
+                       [gridOptions]="gridOptions"
+                       [columnDefs]="columnDefs"
+                       (gridReady)="onGridReady($event)"
+                       [rowSelection]="'multiple'">
       </ag-grid-angular>
 
   </div>
 
-
 </div>
+<app-toast aria-live="polite" aria-atomic="true"></app-toast>

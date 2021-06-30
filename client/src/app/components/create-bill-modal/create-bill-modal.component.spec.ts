@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrateBillModalComponent } from './crate-bill-modal.component';
+import { CreateBillModalComponent } from './create-bill-modal.component';
 
-describe('CrateBillModalComponent', () => {
-  let component: CrateBillModalComponent;
-  let fixture: ComponentFixture<CrateBillModalComponent>;
+describe('CreateBillModalComponent', () => {
+  let component: CreateBillModalComponent;
+  let fixture: ComponentFixture<CreateBillModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrateBillModalComponent ]
+      declarations: [ CreateBillModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrateBillModalComponent);
+    fixture = TestBed.createComponent(CreateBillModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

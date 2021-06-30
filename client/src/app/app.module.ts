@@ -8,14 +8,16 @@ import { AgGridModule } from 'ag-grid-angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateBillModalComponent } from './components/update-bill-modal/update-bill-modal.component';
 import { BillFormComponent } from './components/bill-form/bill-form.component';
-import { CrateBillModalComponent } from './components/crate-bill-modal/crate-bill-modal.component';
+import { CreateBillModalComponent } from './components/create-bill-modal/create-bill-modal.component';
+import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UpdateBillModalComponent,
     BillFormComponent,
-    CrateBillModalComponent
+    CreateBillModalComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

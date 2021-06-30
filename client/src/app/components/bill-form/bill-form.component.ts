@@ -11,20 +11,30 @@ export class BillFormComponent implements OnInit {
   public time: number | undefined;
   public consumption: number | undefined;
   public pricePerHour: number | undefined;
-
+  public validated: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  parseDate(data: any) {
-    console.log('EN EL PARSE', data)
+  parseData(data: any) {
     this.price = data.price
     this.date = data.date
     this.time = data.time
     this.consumption = data.consumption
     this.pricePerHour = data.pricePerHour
+  }
+
+  validate(): boolean{
+    const form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity()) {
+      form.classList.add('was-validated');
+      this.validated = true
+      return true
+    }
+    this.validated = false
+    return false
   }
 
 }
