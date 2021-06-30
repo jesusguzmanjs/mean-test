@@ -27,7 +27,7 @@ Si se desea iniciar sin docker, seguir los siguientes pasos:
 
 https://nodejs.org/en/
 
-##Server
+## Server
 
 Tener instalado un servicio de mongo en la maquina apuntando al puerto 27017.
 
